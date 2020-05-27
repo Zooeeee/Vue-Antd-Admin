@@ -3,6 +3,7 @@ import Mock from 'mockjs'
 
 import { userLogin, getUserInfoByCookie } from './user.js'
 import { initData } from './home.js'
+import { normalTableData } from './table.js'
 
 const serverUrl = '/api/v1'
 Mock.setup({
@@ -11,3 +12,4 @@ Mock.setup({
 Mock.mock(serverUrl + '/user/login', 'post', userLogin)
 Mock.mock(serverUrl + '/user/login', 'get', getUserInfoByCookie)
 Mock.mock(serverUrl + '/main/home', 'get', initData)
+Mock.mock(serverUrl + '/table/normalTable', 'get', normalTableData)

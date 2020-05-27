@@ -1,7 +1,9 @@
 <template>
-   <a-layout-content style="margin: 0 16px">
+   <a-layout-content id="box" style="margin: 0 16px">
       <!-- 主要内容 -->
-      <router-view></router-view>
+      <keep-alive>
+         <router-view></router-view>
+      </keep-alive>
     </a-layout-content>
 </template>
 
@@ -25,5 +27,10 @@ export default {
 </script>
 
 <style scoped lang="less">
-
+// #box{
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   align-items: center;
+// }
 </style>

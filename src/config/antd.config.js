@@ -20,7 +20,13 @@ import {
   Skeleton,
   Descriptions,
   Table,
-  Popconfirm
+  Popconfirm,
+  Empty,
+  Card,
+  Result,
+  Pagination,
+  Divider,
+  InputNumber
 } from 'ant-design-vue'
 
 // ant-design的按需引入-end
@@ -28,8 +34,14 @@ import {
 export const andtImport = () => {
   Vue.component(Avatar.name, Avatar)
   Vue.component(Skeleton.name, Skeleton)
+  Vue.component(Card.name, Card)
+  Vue.component(Card.Meta.name, Card.Meta)
+  Vue.component(Result.name, Result)
+  Vue.component(Pagination.name, Pagination)
   Vue.component(Table.name, Table)
+  Vue.component(Empty.name, Empty)
   Vue.component(Popconfirm.name, Popconfirm)
+  Vue.component(Divider.name, Divider)
   Vue.component(Descriptions.name, Descriptions)
   Vue.component(Descriptions.Item.name, Descriptions.Item)
   Vue.component(Tooltip.name, Tooltip)
@@ -43,6 +55,9 @@ export const andtImport = () => {
   Vue.component(Tabs.TabPane.name, Tabs.TabPane)
   Vue.component(Icon.name, Icon)
   Vue.component(Row.name, Row)
+  Vue.component(Input.TextArea.name, Input.TextArea)
+  Vue.component(Input.Search.name, Input.Search)
+  Vue.component(InputNumber.name, InputNumber)
   Vue.component(Col.name, Col)
   Vue.component(FormModel.name, FormModel)
   Vue.component(FormModel.Item.name, FormModel.Item)

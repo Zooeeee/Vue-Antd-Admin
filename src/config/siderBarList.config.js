@@ -47,11 +47,6 @@ export const navList = [
       },
       {
         role: [firstRole],
-        name: '花名册',
-        to: '/userList'
-      },
-      {
-        role: [firstRole],
         name: '商品列表',
         to: '/goodsList'
       },
@@ -62,35 +57,30 @@ export const navList = [
       },
       {
         role: [firstRole],
-        name: '401',
-        to: '/401'
+        name: '403',
+        to: '/403'
       },
       {
         role: [firstRole],
         name: '404',
         to: '/404'
-      },
-      {
-        role: [firstRole],
-        name: '百度一下',
-        to: ''
       }
     ]
   },
   {
-    name: '图表charts',
+    name: '工具',
     role: [firstRole],
-    iconType: 'area-chart',
+    iconType: 'tool',
     children: [
       {
         role: [firstRole],
-        name: '折线图',
-        to: '/lineChart'
+        name: '指令',
+        to: '/directives'
       },
       {
         role: [firstRole],
-        name: '饼状图',
-        to: '/pieChart'
+        name: '过滤器',
+        to: '/filters'
       }
     ]
   }

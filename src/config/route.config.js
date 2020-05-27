@@ -1,10 +1,10 @@
 export const firstRole = 'admin'
 export const secondRole = 'normal'
 export const routerConfig = [{
-  path: '/401',
-  name: '401',
+  path: '/403',
+  name: '403',
   meta: { role: [firstRole, secondRole] }, // 页面需要的权限
-  component: () => import('@/views/ErrorPage/401.vue')
+  component: () => import('@/views/ErrorPage/403.vue')
 },
 {
   path: '/login',
@@ -73,31 +73,22 @@ export const routerConfig = [{
       component: () => import('@/views/Page/GoodsList/GoodsList.vue')
     },
     {
-      path: '/userList',
-      name: 'userList',
+      path: '/filters',
+      name: 'filters',
       meta: {
         role: [firstRole],
-        des: ['页面', '花名册']
+        des: ['工具', '过滤器']
       }, // 页面需要的权限
-      component: () => import('@/views/Page/UserList/UserList.vue')
+      component: () => import('@/views/Tool/Filters/Filters.vue')
     },
     {
-      path: '/lineChart',
-      name: 'lineChart',
+      path: '/directives',
+      name: 'directives',
       meta: {
         role: [firstRole],
-        des: ['图表', '折线图']
+        des: ['工具', '指令']
       }, // 页面需要的权限
-      component: () => import('@/views/Charts/LineChart/LineChart.vue')
-    },
-    {
-      path: '/pieChart',
-      name: 'pieChart',
-      meta: {
-        role: [firstRole],
-        des: ['图表', '饼状图']
-      }, // 页面需要的权限
-      component: () => import('@/views/Charts/PieChart/PieChart.vue')
+      component: () => import('@/views/Tool/Directives/Directives.vue')
     }
   ],
   component: () => import('@/layout/index.vue')
