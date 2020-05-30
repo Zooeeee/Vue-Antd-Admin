@@ -17,7 +17,7 @@
         <ShowRadar :initData="initData.radarChartData"></ShowRadar>
       </a-col>
     </a-row>
-    <a-row  >
+    <a-row style="margin-top:20px;" >
       <a-col :span="24">
         <Des></Des>
       </a-col>
@@ -79,6 +79,6 @@ export default {
   background: #F1F2F6;
 }
 #showItemData{
-  margin-top: 20px !important;
+  margin-top: 15px !important;
 }
 </style>

@@ -26,7 +26,10 @@ import {
   Result,
   Pagination,
   Divider,
-  InputNumber
+  InputNumber,
+  Tag,
+  PageHeader,
+  BackTop
 } from 'ant-design-vue'
 
 // ant-design的按需引入-end
@@ -35,11 +38,13 @@ export const andtImport = () => {
   Vue.component(Avatar.name, Avatar)
   Vue.component(Skeleton.name, Skeleton)
   Vue.component(Card.name, Card)
+  Vue.component(PageHeader.name, PageHeader)
   Vue.component(Card.Meta.name, Card.Meta)
   Vue.component(Result.name, Result)
   Vue.component(Pagination.name, Pagination)
   Vue.component(Table.name, Table)
   Vue.component(Empty.name, Empty)
+  Vue.component(BackTop.name, BackTop)
   Vue.component(Popconfirm.name, Popconfirm)
   Vue.component(Divider.name, Divider)
   Vue.component(Descriptions.name, Descriptions)
@@ -72,6 +77,7 @@ export const andtImport = () => {
   Vue.component(Layout.Footer.name, Layout.Footer)
   Vue.component(Layout.Sider.name, Layout.Sider)
   Vue.component(Layout.Content.name, Layout.Content)
+  Vue.component(Tag.name, Tag)
   Vue.prototype.$message = message
 }
 // 按需引入ant-design-end

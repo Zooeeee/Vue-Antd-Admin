@@ -5,13 +5,16 @@
       </div>
       <div class="right-area" >
         <div>{{ this.initData.name }}</div>
-        <div>{{ this.initData.data | toThousandFilter }}</div>
+        <!-- <div>{{ this.initData.data | toThousandFilter }}</div> -->
+        <countTo :startVal='0' :endVal='this.initData.data' :duration='3000'></countTo>
       </div>
     </div>
 </template>
 
 <script>
+import countTo from 'vue-count-to'
 export default {
+  components: { countTo },
   props: {
     initData: {
       type: Object,

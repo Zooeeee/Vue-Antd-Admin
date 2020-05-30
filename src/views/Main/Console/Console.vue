@@ -1,6 +1,5 @@
 <template>
     <div>
-      console
     </div>
 </template>
 
@@ -8,7 +7,8 @@
 export default {
   data () {
     return {
-
+      startVal: 0,
+      endVal: 2017
     }
   },
   created () {

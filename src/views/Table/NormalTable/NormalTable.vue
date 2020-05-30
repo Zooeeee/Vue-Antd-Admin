@@ -1,7 +1,13 @@
 <template>
   <div id="box">
-    <a-empty v-if="!dataFlag" id="empty" />
-    <a-table :columns="columns" :data-source="data" bordered v-if="dataFlag"
+    <a-page-header
+          style="border: 1px solid rgb(235, 237, 240)"
+          :title="title"
+          :sub-title="subTitle"
+          @back="() => this.$router.push({path:'/home'})"
+      />
+    <!-- <a-empty v-if="!dataFlag" id="empty" /> -->
+    <a-table :columns="columns" :data-source="data" bordered
     :pagination="{
       showSizeChanger: true,
       pageSizeOptions: ['10', '20', '30', '40']
@@ -68,18 +74,13 @@ const columns = [
 ]
 
 const data = []
-for (let i = 0; i < 100; i++) {
-  data.push({
-    key: i.toString(),
-    name: `Edrward ${i}`,
-    age: 32,
-    address: `London Park no. ${i}`
-  })
-}
+
 export default {
   data () {
     this.cacheData = data.map(item => ({ ...item }))
     return {
+      title: '普通的内联编辑表格',
+      subTitle: '时间主要花在接收数据',
       data,
       columns,
       editingKey: '',
@@ -89,7 +90,7 @@ export default {
   mounted () {
     getNormalTableData().then(res => {
       this.data = res.data
-      this.dataFlag = !this.dataFlag
+      // this.dataFlag = !this.dataFlag
       this.cacheData = res.data.map(item => ({ ...item }))
     })
   },
@@ -140,8 +141,5 @@ export default {
 <style scoped>
 .editable-row-operations a {
   margin-right: 8px;
-}
-#box{
-  margin-top: 50px;
 }
 </style>

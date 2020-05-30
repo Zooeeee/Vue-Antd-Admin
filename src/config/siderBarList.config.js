@@ -42,11 +42,6 @@ export const navList = [
     children: [
       {
         role: [firstRole],
-        name: '个人主页',
-        to: '/userHome'
-      },
-      {
-        role: [firstRole],
         name: '商品列表',
         to: '/goodsList'
       },
@@ -81,6 +76,33 @@ export const navList = [
         role: [firstRole],
         name: '过滤器',
         to: '/filters'
+      }
+    ]
+  },
+  {
+    name: '组件',
+    role: [firstRole],
+    iconType: 'build',
+    children: [
+      {
+        role: [firstRole],
+        name: 'CountTo',
+        to: '/count-to'
+      },
+      {
+        role: [firstRole],
+        name: '富文本编辑器',
+        to: '/tinymce'
+      },
+      {
+        role: [firstRole],
+        name: '头像上传',
+        to: '/avatar-upload'
+      },
+      {
+        role: [firstRole],
+        name: '返回顶部',
+        to: '/back-top'
       }
     ]
   }

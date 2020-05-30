@@ -6,3 +6,9 @@ export function getNormalTableData () {
     method: 'get'
   })
 }
+export function getBigDataTableData () {
+  return request({
+    url: '/table/bigTableData',
+    method: 'get'
+  })
+}

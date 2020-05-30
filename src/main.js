@@ -16,6 +16,10 @@ import IconSvg from '@/components/icon/IconSvg'
 import * as filters from './filters/filter.js'
 // 从配置文件按需引入Echarts
 import { importVueEcharts } from '@/config/eCharts.config.js'
+// 引入指令main文件
+import Directives from '@/directive'
+
+Vue.use(Directives)
 // 全局注册icon-svg
 Vue.component('IconSvg', IconSvg)
 Vue.prototype.$cookies = cookies

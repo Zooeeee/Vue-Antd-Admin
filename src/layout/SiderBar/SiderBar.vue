@@ -4,20 +4,32 @@
     collapsed-width="0"
     @collapse="onCollapse"
     @breakpoint="onBreakpoint"
+     theme="light"
     >
       <!-- 侧边栏 -->
       <div class="logo" />
-      <a-menu theme="dark"
+      <a-menu theme="light"
         mode="inline"
         :defaultOpenKeys="defaultOpenKeys"
         :selectedKeys="[$route.path]"
       >
-        <a-sub-menu v-for="(item) in this.navListDate" :key="item.name">
+        <!-- <a-sub-menu v-for="(item) in this.navListDate" :key="item.name">
           <span slot="title"><a-icon :type="item.iconType" /><span>{{ item.name }}</span></span>
           <a-menu-item v-for="(one) in item.children" :key="one.to">
             <router-link :to="one.to"> {{ one.name }}</router-link>
           </a-menu-item>
-        </a-sub-menu>
+        </a-sub-menu> -->
+        <template v-for="(item) in this.navListDate" >
+          <a-sub-menu :key="item.name" v-if="item.children">
+            <span slot="title"><a-icon :type="item.iconType" /><span>{{ item.name }}</span></span>
+            <a-menu-item v-for="(one) in item.children" :key="one.to">
+              <router-link :to="one.to"> {{ one.name }}</router-link>
+            </a-menu-item>
+          </a-sub-menu>
+          <!-- <a-menu-item :key="item.name" v-else>
+            {{ item.path }}
+          </a-menu-item> -->
+        </template>
       </a-menu>
     </a-layout-sider>
 </template>
