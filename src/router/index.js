@@ -5,6 +5,7 @@ import store from '../store'
 import { routerConfig } from '@/config/route.config.js'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
+import cookies from 'vue-cookies'
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
 Vue.use(VueRouter)
 const router = new VueRouter({
@@ -31,12 +32,22 @@ router.beforeEach((to, from, next) => {
   NProgress.start()
   // 1. 全局路由守卫每次都判断用户是否已经登录，没有登录则跳到登录页
   const role = store.getters.getUserInfo.role
+  // 如果去的时登录页面,放行
   if (to.path === '/login') {
     next()
   } else {
+    // 如果vuex中没有role信息
     if (store.getters.getUserInfo.role === '') {
-      next({ path: '/login' })
-    } else {
+      // 如果cookie中有信息,判断为已经登录过一次的
+      if (cookies.isKey('token')) {
+        store.dispatch('loginByCookieAction', cookies.get('token'))
+          .then(res => {
+            next()
+          })
+      } else {
+        next({ path: '/login' })
+      }
+    } else { // 有role信息,就判断权限
       const path = to.path
       // console.log(map.get(path))
       if (map.has(path) && map.get(path).meta.role.includes(role)) {

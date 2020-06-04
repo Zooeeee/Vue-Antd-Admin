@@ -1,6 +1,8 @@
 <template>
     <a-layout-footer style="text-align: center">
-        Ant Design ©2018 Created by Ant UED
+      <span id="footerArea">
+        {{ footerInfo }}
+      </span>
     </a-layout-footer>
 </template>
 
@@ -8,7 +10,7 @@
 export default {
   data () {
     return {
-
+      footerInfo: 'ZY-Admin©Zoe'
     }
   },
   created () {

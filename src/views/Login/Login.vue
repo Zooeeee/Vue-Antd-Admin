@@ -90,7 +90,17 @@ export default {
   created () {
   },
   mounted () {
-    this.$refs.input.focus()
+    // this.$refs.input.focus()
+    // this.$store.commit('removeUserInfo')
+    // console.log(this.$cookies.isKey('token'))
+    // console.log(this.$store.getters.getUserInfo)
+    // this.$store.dispatch('loginByCookieAction', this.$cookies.get('token'))
+    //   .then(res => {
+    //     console.log(res.data)
+    //     console.log(this.$store.getters.getUserInfo)
+    //   })
+    // console.log('====')
+    // console.log(this.$store.getters.getUserInfo)
   },
   methods: {
     formSubmit () {

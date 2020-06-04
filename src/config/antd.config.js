@@ -1,4 +1,6 @@
 import Vue from 'vue'
+// import portal from 'ant-design-vue/es/_util/Portal'
+// import portalDirective from 'ant-design-vue/es/_util/portalDirective'
 // ant-design的按需引入
 import {
   Button,
@@ -29,13 +31,18 @@ import {
   InputNumber,
   Tag,
   PageHeader,
-  BackTop
+  BackTop,
+  Drawer,
+  Modal,
+  Badge
 } from 'ant-design-vue'
-
 // ant-design的按需引入-end
 // 按需引入ant-design
 export const andtImport = () => {
+  // Vue.use(portalDirective, { name: 'portal' })
+  // Vue.use(portal, { name: 'portal' })
   Vue.component(Avatar.name, Avatar)
+  Vue.component(Modal.name, Modal)
   Vue.component(Skeleton.name, Skeleton)
   Vue.component(Card.name, Card)
   Vue.component(PageHeader.name, PageHeader)
@@ -55,6 +62,7 @@ export const andtImport = () => {
   Vue.component(Button.name, Button)
   Vue.component(Layout.name, Layout)
   Vue.component(Spin.name, Spin)
+  Vue.component(Drawer.name, Drawer)
   Vue.component(Form.Item.name, Form.Item)
   Vue.component(Tabs.name, Tabs)
   Vue.component(Tabs.TabPane.name, Tabs.TabPane)
@@ -64,6 +72,8 @@ export const andtImport = () => {
   Vue.component(Input.Search.name, Input.Search)
   Vue.component(InputNumber.name, InputNumber)
   Vue.component(Col.name, Col)
+  Vue.component(Popconfirm.name, Popconfirm)
+  // Vue.component(Modal.confirm.name, Modal.confirm)
   Vue.component(FormModel.name, FormModel)
   Vue.component(FormModel.Item.name, FormModel.Item)
   Vue.component(Menu.name, Menu)
@@ -78,6 +88,8 @@ export const andtImport = () => {
   Vue.component(Layout.Sider.name, Layout.Sider)
   Vue.component(Layout.Content.name, Layout.Content)
   Vue.component(Tag.name, Tag)
+  Vue.component(Badge.name, Badge)
   Vue.prototype.$message = message
+  Vue.prototype.$confirm = Modal.confirm
 }
 // 按需引入ant-design-end

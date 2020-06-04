@@ -1,9 +1,9 @@
 <template>
     <!-- 头部 -->
-  <a-layout-header style="background: #fff; padding: 0"  >
+  <a-layout-header style="background: #fff; padding: 0; height: 60px;"  >
   <!-- 面包屑导航 -->
     <a-row id="main">
-      <a-col :xs="20" :sm="20" :md="18" :lg="20" :xl="20" id="breadArea">
+      <a-col :xs="24" :sm="24" :md="12" :lg="14" :xl="18" id="breadArea">
         <a-breadcrumb >
           <a-breadcrumb-item>
             <router-link :to="{path: '/home'}">首页</router-link>
@@ -14,49 +14,18 @@
         </a-breadcrumb>
       </a-col>
       <!-- 工具按钮 -->
-      <a-col :xs="0" :sm="0" :md="4" :lg="3" :xl="3" class="toolArea">
-        <div class="cursor">
-         <!-- 全屏 -->
-          <a-tooltip placement="topLeft" :title="!fullscreen? '全屏' : '退出全屏'">
-            <a-avatar   :icon="!fullscreen? 'fullscreen' : 'fullscreen-exit'" @click="handleFullScreen" />
-          </a-tooltip>
-        </div>
-        <div class="cursor">
-         <!-- 帮助 -->
-          <a-tooltip placement="topLeft" title="帮助">
-            <a-avatar  icon="question-circle" />
-          </a-tooltip>
-        </div>
+      <a-col :xs="16" :sm="16" :md="8" :lg="8" :xl="4" >
+        <ToolList></ToolList>
       </a-col>
       <!-- 头像 -->
-      <a-col :xs="4" :sm="4" :md="2" :lg="1" :xl="1" id="avatarArea">
-        <div class="cursor">
-          <!-- <a-avatar  style="color: #f56a00; backgroundColor: #fde3cf">
-            {{ this.$store.getters.getUserInfo.nickName }}
-          </a-avatar> -->
-          <a-dropdown placement="bottomLeft" id="dropdown" >
-            <a class="ant-dropdown-link" @click="e => e.preventDefault()">
-              <a-avatar size="large" style="color: #f56a00; backgroundColor: #fde3cf">
-                  {{ this.$store.getters.getUserInfo.nickName }}
-              </a-avatar>
-            </a>
-            <a-menu slot="overlay">
-              <a-menu-item v-for="(item, index) in dropDownData" :key="index">
-                <router-link :to="item.to">{{item.des}}</router-link>
-              </a-menu-item>
-              <a-menu-divider />
-              <a-menu-item key="quit">
-                退出登录
-              </a-menu-item>
-            </a-menu>
-          </a-dropdown>
-        </div>
+      <a-col :xs="8" :sm="8" :md="4" :lg="2" :xl="2" >
+        <Avatar></Avatar>
       </a-col>
     </a-row>
   </a-layout-header>
 </template>
 
-<style scoped lang="less">
+<style lang="less" scoped >
 .cursor{
   cursor: pointer;
 }
@@ -73,10 +42,12 @@
 </style>
 
 <script>
+import Avatar from './Avatar'
+import ToolList from './ToolList/ToolList.vue'
 export default {
+  components: { ToolList, Avatar },
   data () {
     return {
-      fullscreen: false,
       dropDownData: [
         {
           des: '首页',

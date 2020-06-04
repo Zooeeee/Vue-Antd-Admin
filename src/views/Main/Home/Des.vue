@@ -23,10 +23,10 @@
       <a-descriptions-item label="参考界面">
         Vue-Element-Admin
       </a-descriptions-item>
-      <a-descriptions-item label="配置">
-        Vue-cli: 4.3.1
+      <a-descriptions-item label="使用插件">
+        引导插件: driver.js
         <br />
-        Vue:3.x
+        拖拽插件: vuedraggable
         <br />
         数据模拟: Mock
         <br />

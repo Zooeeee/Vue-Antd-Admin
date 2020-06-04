@@ -13,8 +13,8 @@ export const navList = [
       },
       {
         role: [firstRole, secondRole],
-        name: '控制台',
-        to: '/console'
+        name: '引导页',
+        to: '/guide'
       }
     ]
   },
@@ -103,6 +103,11 @@ export const navList = [
         role: [firstRole],
         name: '返回顶部',
         to: '/back-top'
+      },
+      {
+        role: [firstRole],
+        name: '拖拽',
+        to: '/draggable'
       }
     ]
   }

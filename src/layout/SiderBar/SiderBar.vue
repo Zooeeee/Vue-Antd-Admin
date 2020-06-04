@@ -4,21 +4,16 @@
     collapsed-width="0"
     @collapse="onCollapse"
     @breakpoint="onBreakpoint"
-     theme="light"
+    theme="light"
     >
       <!-- 侧边栏 -->
-      <div class="logo" />
+      <div  id="logo" />
       <a-menu theme="light"
         mode="inline"
         :defaultOpenKeys="defaultOpenKeys"
         :selectedKeys="[$route.path]"
+        id="navList"
       >
-        <!-- <a-sub-menu v-for="(item) in this.navListDate" :key="item.name">
-          <span slot="title"><a-icon :type="item.iconType" /><span>{{ item.name }}</span></span>
-          <a-menu-item v-for="(one) in item.children" :key="one.to">
-            <router-link :to="one.to"> {{ one.name }}</router-link>
-          </a-menu-item>
-        </a-sub-menu> -->
         <template v-for="(item) in this.navListDate" >
           <a-sub-menu :key="item.name" v-if="item.children">
             <span slot="title"><a-icon :type="item.iconType" /><span>{{ item.name }}</span></span>
@@ -79,9 +74,13 @@ export default {
 </script>
 
 <style scoped lang="less">
-.logo {
-  height: 50px;
+#logo {
+  height: 65px;
   background: rgba(255, 255, 255, 0.2);
   margin: 16px;
+  background-image: url('../../../static/img/logo/admin.png');
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-position: center 0;
 }
 </style>

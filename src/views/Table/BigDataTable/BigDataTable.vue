@@ -11,9 +11,10 @@
       <bigdataTable
         v-if="dataFlag"
         ref="bigdataTable"
+        :showIndex="true"
         class="bigData"
         v-model ="data"
-        :col-width="200"
+        :col-width="250"
         :columns="columns"
         :fixed="true"
         stripe
@@ -38,7 +39,7 @@ export default {
       dataFlag: false,
       data: [],
       columns: [
-        { title: 'id', align: 'center' },
+        // { title: 'id', align: 'center' },
         { title: '姓名', align: 'center' },
         { title: '年龄', align: 'center' },
         { title: '籍贯', align: 'center' }

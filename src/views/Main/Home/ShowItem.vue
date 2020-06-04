@@ -6,7 +6,7 @@
       <div class="right-area" >
         <div>{{ this.initData.name }}</div>
         <!-- <div>{{ this.initData.data | toThousandFilter }}</div> -->
-        <countTo :startVal='0' :endVal='this.initData.data' :duration='3000'></countTo>
+        <countTo :startVal='0' :endVal='this.initData.data' :duration='5000'></countTo>
       </div>
     </div>
 </template>

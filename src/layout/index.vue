@@ -1,10 +1,11 @@
 <template>
   <a-layout  style="min-height: 100vh">
     <!-- 侧边导航栏 -->
-    <SiderBar></SiderBar>
+    <!-- <SiderBar style="background-color:#1F2229" ></SiderBar> -->
+    <SiderBar  ></SiderBar>
     <a-layout>
       <!-- 头部 -->
-      <HeadBar ></HeadBar>
+      <HeadBar  ></HeadBar>
       <!-- 标签 -->
       <!-- <TabsBar></TabsBar> -->
       <!-- 主要内容 -->

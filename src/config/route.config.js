@@ -28,13 +28,13 @@ export const routerConfig = [{
       component: () => import('@/views/Main/Home/Home.vue')
     },
     {
-      path: '/console',
-      name: 'console',
+      path: '/guide',
+      name: 'guide',
       meta: {
         role: [firstRole, secondRole],
-        des: ['概要', '控制台']
+        des: ['概要', '引导页']
       }, // 页面需要的权限
-      component: () => import('@/views/Main/Console/Console.vue')
+      component: () => import('@/views/Main/Guide/Guide.vue')
     },
     {
       path: '/normalTable',
@@ -89,6 +89,15 @@ export const routerConfig = [{
         des: ['组件', 'CountTo']
       }, // 页面需要的权限
       component: () => import('@/views/Components/CountTo/CountTo.vue')
+    },
+    {
+      path: '/draggable',
+      name: 'Draggable',
+      meta: {
+        role: [firstRole],
+        des: ['组件', 'Draggable']
+      }, // 页面需要的权限
+      component: () => import('@/views/Components/Draggable/Draggable.vue')
     },
     {
       path: '/back-top',

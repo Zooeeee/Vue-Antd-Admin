@@ -19,7 +19,7 @@ export const bigTableData = function () {
   const res = []
   for (let i = 0; i <= 100000; i++) {
     const one = [
-      i,
+      // i,
       Random.cname(),
       Random.natural(18, 100),
       Random.city()

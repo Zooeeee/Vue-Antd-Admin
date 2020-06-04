@@ -6,13 +6,9 @@ const user = {
     userInfo: {
       nickName: '',
       role: ''
-    },
-    hasInited: false
+    }
   },
   getters: {
-    getHasInited: state => {
-      return state.hasInited
-    },
     getUserInfo: state => {
       return state.userInfo
     }
@@ -24,8 +20,11 @@ const user = {
     setUserInfo: (state, userInfo) => {
       state.userInfo = userInfo
     },
-    setHasInited: (state, flag) => {
-      state.hasInited = flag
+    removeUserInfo: state => {
+      state.userInfo = {
+        nickName: '',
+        role: ''
+      }
     }
   },
   actions: {

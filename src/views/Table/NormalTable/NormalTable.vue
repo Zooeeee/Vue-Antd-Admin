@@ -38,7 +38,7 @@
             </a-popconfirm>
           </span>
           <span v-else>
-            <a :disabled="editingKey !== ''" @click="() => edit(record.key)">Edit</a>
+            <a :disabled="editingKey !== ''" @click="() => edit(record.key)">操作</a>
           </span>
         </div>
       </template>
@@ -49,25 +49,25 @@
 import { getNormalTableData } from '@/api/table.js'
 const columns = [
   {
-    title: 'name',
+    title: '姓名',
     dataIndex: 'name',
     width: '25%',
     scopedSlots: { customRender: 'name' }
   },
   {
-    title: 'age',
+    title: '年龄',
     dataIndex: 'age',
     width: '15%',
     scopedSlots: { customRender: 'age' }
   },
   {
-    title: 'address',
+    title: '住址',
     dataIndex: 'address',
     width: '40%',
     scopedSlots: { customRender: 'address' }
   },
   {
-    title: 'operation',
+    title: '操作',
     dataIndex: 'operation',
     scopedSlots: { customRender: 'operation' }
   }
