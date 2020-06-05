@@ -21,9 +21,9 @@
               <router-link :to="one.to"> {{ one.name }}</router-link>
             </a-menu-item>
           </a-sub-menu>
-          <!-- <a-menu-item :key="item.name" v-else>
-            {{ item.path }}
-          </a-menu-item> -->
+          <a-menu-item :key="item.to" v-else>
+            <router-link :to="item.to"> <a-icon :type="item.iconType" /> {{ item.name }}</router-link>
+          </a-menu-item>
         </template>
       </a-menu>
     </a-layout-sider>
@@ -39,13 +39,18 @@ export default {
   },
   computed: {
     defaultOpenKeys () {
-      // console.log(this.$route.path)
-      // console.log(this.navListDate)
+      const path = this.$route.path
       let res = ''
       for (const iterator of this.navListDate) {
-        for (const one of iterator.children) {
-          if (one.to === this.$route.path) {
-            res = iterator.name
+        if (iterator.to === path) {
+          res = iterator.name
+          break
+        }
+        if (iterator.children) {
+          for (const one of iterator.children) {
+            if (one.to === this.$route.path) {
+              res = iterator.name
+            }
           }
         }
       }
@@ -53,12 +58,17 @@ export default {
     }
   },
   created () {
+    // 根据权限渲染
     const role = this.$store.getters.getUserInfo.role
+    console.log(navList)
     const data = navList.filter(ele => ele.role.includes(role))
     for (let i = 0; i < data.length; i++) {
-      data[i].children = data[i].children.filter(ele => ele.role.includes(role))
+      if (data[i].children) {
+        data[i].children = data[i].children.filter(ele => ele.role.includes(role))
+      }
     }
     this.navListDate = data
+    console.log(data)
   },
   mounted () {
   },

@@ -2,21 +2,16 @@ import { firstRole, secondRole } from '@/config/route.config'
 // 关于导航栏的配置文件
 export const navList = [
   {
-    name: '概要Main',
+    name: '主页',
     iconType: 'home',
     role: [firstRole, secondRole],
-    children: [
-      {
-        role: [firstRole, secondRole],
-        name: '主页',
-        to: '/home'
-      },
-      {
-        role: [firstRole, secondRole],
-        name: '引导页',
-        to: '/guide'
-      }
-    ]
+    to: '/home'
+  },
+  {
+    name: '引导页',
+    iconType: 'question-circle',
+    role: [firstRole, secondRole],
+    to: '/guide'
   },
   {
     name: '表格Table',
