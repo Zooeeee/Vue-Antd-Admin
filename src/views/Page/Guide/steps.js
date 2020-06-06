@@ -41,18 +41,18 @@ const steps = [
     }
   },
   {
-    element: '#toolInfo',
-    popover: {
-      title: '消息',
-      description: '消息中心',
-      position: 'left'
-    }
-  },
-  {
     element: '#toolTheme',
     popover: {
       title: '主题',
       description: '更换主题',
+      position: 'left'
+    }
+  },
+  {
+    element: '#toolInfo',
+    popover: {
+      title: '消息',
+      description: '消息中心',
       position: 'left'
     }
   },

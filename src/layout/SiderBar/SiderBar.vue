@@ -39,6 +39,7 @@ export default {
   },
   computed: {
     defaultOpenKeys () {
+      // 思路 遍历navListData 找到to=当前路由从而解决从路由进入页面时导航栏的默认打开菜单
       const path = this.$route.path
       let res = ''
       for (const iterator of this.navListDate) {
@@ -59,8 +60,10 @@ export default {
   },
   created () {
     // 根据权限渲染
+    // 思路 : 1 先拿到权限
+    // 拿着权限去配置文件中过滤
+    // TODO: 这里应该能使用递归,做出N级子菜单的效果
     const role = this.$store.getters.getUserInfo.role
-    console.log(navList)
     const data = navList.filter(ele => ele.role.includes(role))
     for (let i = 0; i < data.length; i++) {
       if (data[i].children) {
@@ -68,7 +71,6 @@ export default {
       }
     }
     this.navListDate = data
-    console.log(data)
   },
   mounted () {
   },

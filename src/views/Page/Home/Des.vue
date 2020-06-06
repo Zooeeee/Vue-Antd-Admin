@@ -34,7 +34,7 @@
         <br />
         路由加载条: NProgress
         <br />
-        Cookie: Vue-cookies
+        富文本编辑器: WangEditor
       </a-descriptions-item>
     </a-descriptions>
   </div>

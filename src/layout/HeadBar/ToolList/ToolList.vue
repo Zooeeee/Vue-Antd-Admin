@@ -1,9 +1,9 @@
 <template>
     <div class="toolList">
-        <ScreenFull class="cursor"/>
-        <Note class="cursor"/>
-        <Theme class="cursor"/>
-        <Info class="cursor"/>
+        <ScreenFull class="item"/>
+        <Note class="item"/>
+        <Theme class="item"/>
+        <Info class="item"/>
     </div>
 </template>
 
@@ -39,7 +39,11 @@ export default {
   // justify-content: center;
   align-items: center;
 }
-.cursor{
+.item{
   cursor: pointer;
+  &:hover{
+    transform: translateY(-3px);
+    color: orangered;
+  }
 }
 </style>

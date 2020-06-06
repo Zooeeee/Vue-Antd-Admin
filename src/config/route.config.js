@@ -25,7 +25,7 @@ export const routerConfig = [{
         role: [firstRole, secondRole],
         des: ['概要', '主页']
       }, // 页面需要的权限
-      component: () => import('@/views/Main/Home/Home.vue')
+      component: () => import('@/views/Page/Home/Home.vue')
     },
     {
       path: '/guide',
@@ -34,7 +34,7 @@ export const routerConfig = [{
         role: [firstRole, secondRole],
         des: ['概要', '引导页']
       }, // 页面需要的权限
-      component: () => import('@/views/Main/Guide/Guide.vue')
+      component: () => import('@/views/Page/Guide/Guide.vue')
     },
     {
       path: '/normalTable',
