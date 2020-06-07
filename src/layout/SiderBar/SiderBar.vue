@@ -89,7 +89,7 @@ export default {
   height: 65px;
   background: rgba(255, 255, 255, 0.2);
   margin: 16px;
-  background-image: url('../../../static/img/logo/admin.png');
+  // background-image: url('../../../static/img/logo/admin.png');
   background-repeat:no-repeat;
   background-size: cover;
   background-position: center 0;

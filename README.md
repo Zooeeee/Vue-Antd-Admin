@@ -9,7 +9,10 @@ npm run serve
 ```
 # 地址
 ## 项目地址
+[项目地址](https://github.com/Zooeeee/Vue-Antd-Admin)
 ## 线上展示地址
+[线上展示地址](http://120.79.183.71:8081/)
+
 # 简介
 ## 起因
 在掘金上看见一篇手写vue-admin的文章,感觉能锻炼自己的vue使用能力和检验vue的学习成果,于是决定跟着文章尝试,文章选用的是element-ui框架,为了掌握更多的ui框架,我选用了ant-design的vue版本
