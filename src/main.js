@@ -23,7 +23,7 @@ Vue.use(Directives)
 // 全局注册icon-svg
 Vue.component('IconSvg', IconSvg)
 Vue.prototype.$cookies = cookies
-
+// Vue.config.productionTip = false
 // 使用vue-axios注册axios
 Vue.use(VueAxios, axios)
 // 引入mockjs

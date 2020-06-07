@@ -3,13 +3,19 @@ export const secondRole = 'normal'
 export const routerConfig = [{
   path: '/403',
   name: '403',
-  meta: { role: [firstRole, secondRole] }, // 页面需要的权限
+  meta: {
+    role: [firstRole, secondRole],
+    title: '403'
+  }, // 页面需要的权限
   component: () => import('@/views/ErrorPage/403.vue')
 },
 {
   path: '/login',
   name: 'login',
-  meta: { role: [firstRole, secondRole] }, // 页面需要的权限
+  meta: {
+    role: [firstRole, secondRole],
+    title: '登录'
+  }, // 页面需要的权限
   component: () => import('@/views/Login/Login.vue')
 },
 {
@@ -23,7 +29,8 @@ export const routerConfig = [{
       name: 'home',
       meta: {
         role: [firstRole, secondRole],
-        des: ['概要', '主页']
+        des: ['概要', '主页'],
+        title: '首页'
       }, // 页面需要的权限
       component: () => import('@/views/Page/Home/Home.vue')
     },
@@ -32,7 +39,8 @@ export const routerConfig = [{
       name: 'guide',
       meta: {
         role: [firstRole, secondRole],
-        des: ['概要', '引导页']
+        des: ['概要', '引导页'],
+        title: '引导页'
       }, // 页面需要的权限
       component: () => import('@/views/Page/Guide/Guide.vue')
     },
@@ -41,7 +49,8 @@ export const routerConfig = [{
       name: 'normalTable',
       meta: {
         role: [firstRole, secondRole],
-        des: ['表格', '普通表格']
+        des: ['表格', '普通表格'],
+        title: '普通表格'
       }, // 页面需要的权限
       component: () => import('@/views/Table/NormalTable/NormalTable.vue')
     },
@@ -50,7 +59,8 @@ export const routerConfig = [{
       name: 'bigDataTable',
       meta: {
         role: [firstRole],
-        des: ['表格', '大数据表格']
+        des: ['表格', '大数据表格'],
+        title: '大数据表格'
       }, // 页面需要的权限
       component: () => import('@/views/Table/BigDataTable/BigDataTable.vue')
     },
@@ -59,7 +69,8 @@ export const routerConfig = [{
       name: 'goodsList',
       meta: {
         role: [firstRole],
-        des: ['页面', '商品列表']
+        des: ['页面', '商品列表'],
+        title: '商品列表'
       }, // 页面需要的权限
       component: () => import('@/views/Page/GoodsList/GoodsList.vue')
     },
@@ -68,7 +79,8 @@ export const routerConfig = [{
       name: 'filters',
       meta: {
         role: [firstRole],
-        des: ['工具', '过滤器']
+        des: ['工具', '过滤器'],
+        title: '过滤器'
       }, // 页面需要的权限
       component: () => import('@/views/Tool/Filters/Filters.vue')
     },
@@ -77,7 +89,8 @@ export const routerConfig = [{
       name: 'directives',
       meta: {
         role: [firstRole],
-        des: ['工具', '指令']
+        des: ['工具', '指令'],
+        title: '指令'
       }, // 页面需要的权限
       component: () => import('@/views/Tool/Directives/Directives.vue')
     },
@@ -86,7 +99,8 @@ export const routerConfig = [{
       name: 'CountTo',
       meta: {
         role: [firstRole],
-        des: ['组件', 'CountTo']
+        des: ['组件', 'CountTo'],
+        title: 'CountTo'
       }, // 页面需要的权限
       component: () => import('@/views/Components/CountTo/CountTo.vue')
     },
@@ -95,7 +109,8 @@ export const routerConfig = [{
       name: 'Draggable',
       meta: {
         role: [firstRole],
-        des: ['组件', 'Draggable']
+        des: ['组件', 'Draggable'],
+        title: '拖拽'
       }, // 页面需要的权限
       component: () => import('@/views/Components/Draggable/Draggable.vue')
     },
@@ -104,7 +119,8 @@ export const routerConfig = [{
       name: 'BackTop',
       meta: {
         role: [firstRole],
-        des: ['组件', '回到顶部']
+        des: ['组件', '回到顶部'],
+        title: '回到顶部'
       }, // 页面需要的权限
       component: () => import('@/views/Components/BackTop/BackTop.vue')
     },
@@ -113,7 +129,8 @@ export const routerConfig = [{
       name: 'AvatarUpload',
       meta: {
         role: [firstRole],
-        des: ['组件', '头像上传']
+        des: ['组件', '头像上传'],
+        title: '头像上传'
       }, // 页面需要的权限
       component: () => import('@/views/Components/AvatarUpload/AvatarUpload.vue')
     },
@@ -122,7 +139,8 @@ export const routerConfig = [{
       name: 'Tinymce',
       meta: {
         role: [firstRole],
-        des: ['组件', '富文本编辑器']
+        des: ['组件', '富文本编辑器'],
+        title: '富文本编辑器'
       }, // 页面需要的权限
       component: () => import('@/views/Components/Tinymce/Tinymce.vue')
     }
@@ -132,6 +150,9 @@ export const routerConfig = [{
 {
   path: '/404',
   name: '404',
-  meta: { role: [firstRole, secondRole] }, // 页面需要的权限
+  meta: {
+    role: [firstRole, secondRole],
+    title: '404'
+  }, // 页面需要的权限
   component: () => import('@/views/ErrorPage/404.vue')
 }]

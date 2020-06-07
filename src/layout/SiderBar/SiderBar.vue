@@ -4,7 +4,6 @@
     collapsed-width="0"
     @collapse="onCollapse"
     @breakpoint="onBreakpoint"
-    theme="light"
     >
       <!-- 侧边栏 -->
       <div  id="logo" />
@@ -94,5 +93,8 @@ export default {
   background-repeat:no-repeat;
   background-size: cover;
   background-position: center 0;
+}
+#navList{
+  border-right: 0px ;
 }
 </style>

@@ -34,6 +34,9 @@ router.beforeEach((to, from, next) => {
   const role = store.getters.getUserInfo.role
   // 如果去的时登录页面,放行
   if (to.path === '/login') {
+    if (to.meta.title) {
+      document.title = to.meta.title
+    }
     next()
   } else {
     // 如果vuex中没有role信息
@@ -42,6 +45,9 @@ router.beforeEach((to, from, next) => {
       if (cookies.isKey('token')) {
         store.dispatch('loginByCookieAction', cookies.get('token'))
           .then(res => {
+            if (to.meta.title) {
+              document.title = to.meta.title
+            }
             next()
           })
       } else {
@@ -51,10 +57,16 @@ router.beforeEach((to, from, next) => {
       const path = to.path
       // console.log(map.get(path))
       if (map.has(path) && map.get(path).meta.role.includes(role)) {
+        if (to.meta.title) {
+          document.title = to.meta.title
+        }
         next()
       } else {
         message.info('没有找到页面')
         next({ path: '/404' })
+        if (to.meta.title) {
+          document.title = to.meta.title
+        }
       }
     }
   }
